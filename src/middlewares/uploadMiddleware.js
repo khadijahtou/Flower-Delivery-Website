@@ -1,5 +1,5 @@
-const multer = require("multer");
-const path = require("path");
+import multer from "multer";
+import path from "path";
 
 // set up storage engine
 const storage = multer.diskStorage({
@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
 	},
 });
 // file filter to allow only images
-const fileFiltet = (req, file, cb) => {
+const fileFilter = (req, file, cb) => {
 	if (
 		file.mimetype === "image/jpeg" ||
 		file.mimetype === "image/png" ||
@@ -32,4 +32,4 @@ const upload = multer({
 	fileFilter: fileFilter,
 });
 // export the upload middleware
-module.exports = upload;
+export default upload;

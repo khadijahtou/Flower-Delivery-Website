@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const flowerSchema = new mongoose.Schema({
 	name: String,
 	description: String,
@@ -6,4 +6,6 @@ const flowerSchema = new mongoose.Schema({
 	category: String,
 	ImageUrl: String,
 });
-module.export = mongoose.model("Flower", flowerSchema);
+
+const Flower = mongoose.model("Flower", flowerSchema);
+export default mongoose.model("Flower", flowerSchema);
