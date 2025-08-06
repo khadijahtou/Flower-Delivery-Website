@@ -8,4 +8,4 @@ const flowerSchema = new mongoose.Schema({
 });
 
 const Flower = mongoose.model("Flower", flowerSchema);
-export default mongoose.model("Flower", flowerSchema);
+export default Flower;

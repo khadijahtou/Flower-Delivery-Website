@@ -1,7 +1,7 @@
-import Flower from "./flowerModel.js";
+import Flower from "../models/flowerModel.js";
 import express from "express";
 
-const getFlower = async (req, res) => {
+export const getFlower = async (req, res) => {
 	try {
 		const flower = await Flower.find();
 		res.status(200).json(flower);
@@ -9,20 +9,19 @@ const getFlower = async (req, res) => {
 		res.status(500).json({ error: "Failed to fetch flowers" });
 	}
 };
-const addFlower = async (req, res) => {
+export const addFlower = async (req, res) => {
 	try {
 		const { name, description, price, category } = req.body;
-		const image = req.file?.path;
+		// const image = req.file?.path;
 
-		const flower = new Flower({ name, description, price, category, image });
-		await flower.save();
-		res.json(flower);
+		const flower = await Flower.create({ name, description, price, category });
+		res.status(201).json(flower);
 	} catch (err) {
 		res.status(500).json({ error: "Failed to add flower" });
 	}
 };
 
-const deleteFlower = async (req, res) => {
+export const deleteFlower = async (req, res) => {
 	try {
 		await Flower.findByIdAndDelete(req.params.id);
 		res.status(200).json({ message: "Flower deleted Successfully" });
@@ -31,11 +30,11 @@ const deleteFlower = async (req, res) => {
 	}
 };
 
-// ✅ Export all controller methods as an object
-const flowerCtrl = {
-	getFlower,
-	addFlower,
-	deleteFlower,
-};
+//  Export all controller methods as an object
+// const flowerCtrl = {
+// 	getFlower,
+// 	addFlower,
+// 	deleteFlower,
+// };
 
-export default flowerCtrl;
+// export default flowerCtrl;
