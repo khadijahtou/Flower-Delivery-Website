@@ -11,13 +11,20 @@ export const getFlower = async (req, res) => {
 };
 export const addFlower = async (req, res) => {
 	try {
-		const { name, description, price, category } = req.body;
+		console.log(req.body);
+		const name = req.body.name;
+		const description = req.body.description;
+		const price = req.body.price;
+		const category = req.body.category;
+
+		// const { name, description, price, category } = req.body;
 		// const image = req.file?.path;
 
 		const flower = await Flower.create({ name, description, price, category });
 		res.status(201).json(flower);
 	} catch (err) {
 		res.status(500).json({ error: "Failed to add flower" });
+		console.log(err);
 	}
 };
 

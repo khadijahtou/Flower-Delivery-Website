@@ -2,17 +2,7 @@ import multer from "multer";
 import path from "path";
 
 // set up storage engine
-const storage = multer.diskStorage({
-	destination: (req, file, cb) => {
-		cb(null, "uploads/");
-	},
-	filename: (req, file, cb) => {
-		const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-		// get the file extension
-		const ext = path.extname(file.originalname);
-		cb(null, file.fieldname + "-" + uniqueSuffix + ext);
-	},
-});
+
 // file filter to allow only images
 const fileFilter = (req, file, cb) => {
 	if (
@@ -28,7 +18,7 @@ const fileFilter = (req, file, cb) => {
 
 // initialize multer wwith stronge storage and file filter
 const upload = multer({
-	storage: storage,
+	storage: multer.diskStorage({}),
 	fileFilter: fileFilter,
 });
 // export the upload middleware
