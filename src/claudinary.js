@@ -1,10 +1,15 @@
 import cloudinary from "cloudinary";
+console.log(
+	process.env.CLOUD_NAME,
+	process.env.API_KEY,
+	process.env.API_SECRET
+);
 cloudinary.v2.config({
 	cloud_name: process.env.CLOUD_NAME,
 	api_key: process.env.API_KEY,
 	api_secret: process.env.API_SECRET,
 });
-function uploadFiletoCloud(path) {
+export default function uploadFiletoCloud(path) {
 	return cloudinary.v2.uploader.upload(path);
 }
-export { uploadFiletoCloud };
+// export d{ uploadFiletoCloud };

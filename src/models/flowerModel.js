@@ -4,7 +4,7 @@ const flowerSchema = new mongoose.Schema({
 	description: String,
 	price: Number,
 	category: String,
-	ImageUrl: String,
+	imageUrl: String,
 });
 
 const Flower = mongoose.model("Flower", flowerSchema);

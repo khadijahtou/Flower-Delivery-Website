@@ -1,3 +1,4 @@
+import uploadFiletoCloud from "../claudinary.js";
 import Flower from "../models/flowerModel.js";
 import express from "express";
 
@@ -16,11 +17,28 @@ export const addFlower = async (req, res) => {
 		const description = req.body.description;
 		const price = req.body.price;
 		const category = req.body.category;
+		let imageFileURL = "";
+		const imageFile = req.file;
+		if (imageFile) {
+			try {
+				imageFileURL = await uploadFiletoCloud(imageFile.path).secure_url;
+			} catch (error) {
+				console.log("file upload failed");
+				console.log(error);
+			}
+		}
 
 		// const { name, description, price, category } = req.body;
 		// const image = req.file?.path;
 
-		const flower = await Flower.create({ name, description, price, category });
+		const flower = await Flower.create({
+			name: name,
+			description: description,
+			price: price,
+			category: category,
+			imageUrl: imageFileURL,
+		});
+
 		res.status(201).json(flower);
 	} catch (err) {
 		res.status(500).json({ error: "Failed to add flower" });
