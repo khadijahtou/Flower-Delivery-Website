@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import colors from "colors";
 import flowerRouter from "./routers/flowerRouter.js";
+import userRouter from "./routers/userRouter.js";
 import connectToDataBase from "./database.js";
 
 dotenv.config();
@@ -16,8 +17,12 @@ app.use(express.urlencoded({ extended: false }));
 app.get("/end", (req, res) => {
 	res.status(200).json({ messaage: "hello" });
 });
+app.get("/", (req, res) => {
+	res.status(200).json({ message: "Welcome to the Flower Delivery API" });
+});
 // user routes
 app.use("/api/flowers", flowerRouter);
+app.use("/api/users", userRouter);
 
 app.listen(port, async () => {
 	console.log(colors.blue("server is running on port 3000"));

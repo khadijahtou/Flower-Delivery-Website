@@ -1,4 +1,6 @@
 import cloudinary from "cloudinary";
+import dotenv from "dotenv";
+dotenv.config();
 console.log(
 	process.env.CLOUD_NAME,
 	process.env.API_KEY,
