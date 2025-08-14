@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import colors from "colors";
 import flowerRouter from "./routers/flowerRouter.js";
 import userRouter from "./routers/userRouter.js";
+import authRouter from "./routers/authRouter.js";
 import connectToDataBase from "./database.js";
 
 dotenv.config();
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
 // user routes
 app.use("/api/flowers", flowerRouter);
 app.use("/api/users", userRouter);
+app.use("/api/auth", authRouter);
 
 app.listen(port, async () => {
 	console.log(colors.blue("server is running on port 3000"));
