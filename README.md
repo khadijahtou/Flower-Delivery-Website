@@ -105,3 +105,7 @@ http://localhost:3000
 This project is licensed under the **MIT License**. You are free to use and adapt it for your own projects.
 
 ---
+
+## RENDER LINK: https://flower-delivery-website-w20a.onrender.com
+
+## LOOM VIDEO LINK: https://www.loom.com/share/a2d83885a12c4a17b70a74240ac84c8e?sid=bdbff708-e6b9-4ae8-8e3d-14154104a3c6
