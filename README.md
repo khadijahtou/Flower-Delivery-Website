@@ -1,8 +1,4 @@
-# Flower-Delivery-Website
-
----
-
-# Flower Delivery Backend API
+g# Flower Delivery Backend API
 
 A secure and scalable REST API for managing flower products and user accounts.
 Built with **Node.js**, **Express**, and **MongoDB**, featuring **JWT authentication**, **data validation**, and **Cloudinary** image hosting.
