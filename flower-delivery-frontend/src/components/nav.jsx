@@ -1,28 +1,15 @@
 import React from "react";
 
-function Nav() {
+function Navbar() {
 	return (
 		<div>
-			<nav className="navbar">
-				<ul>
-					<li>
-						<Link to="/">Shop</Link>
-					</li>
-					<li>
-						<Link to="/contact">Contact</Link>
-					</li>
-				</ul>
-				<ul>
-					<li>
-						<Link to="/signin">Sign In</Link>
-					</li>
-					<li>
-						<Link to="/cart">Cart</Link>
-					</li>
-				</ul>
+			<nav className="bg-green-500 p-4">
+				<h1 className="text-white text-2xl bg-black">
+					Flower Delivery Service
+				</h1>
 			</nav>
 		</div>
 	);
 }
 
-export default Nav;
+export default Navbar;
