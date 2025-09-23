@@ -2,11 +2,13 @@ import React from "react";
 
 function About() {
 	return (
-		<div className=" justify-between text-center p-10 flex flex-row gap-50">
-			<h1>About Us</h1>
-			<div className="flex flex-col gap-4  align-center p-3">
-				<h2 className="text-sm text-black">our story</h2>
-				<h4>Kyiv LuxeBouquets</h4>
+		<div className="grid grid-cols-1 md:grid-cols-2 border border-black ">
+			<h1 className="  text-4xl font-bold leading-tight md:w-1/2 text-center p-3">
+				About Us
+			</h1>
+			<div className=" border-black md: flex flex-col gap-6 align-center p-3">
+				<h2 className="text-sm text-black  ">OUR STORY</h2>
+				<h4 className="text-lg font-semibold">Kyiv LuxeBouquets</h4>
 				<p>
 					We are a modern local floral studio, which specializes in the design
 					and delivery of unique bouquets. We have the best florists who
@@ -19,7 +21,7 @@ function About() {
 					plants and gifts the same or next day. Ordering flowers online has
 					never been easier.
 				</p>
-				<button className="bg-white text-black py-2 px-4 rounded h-10 w-40">
+				<button className="bg-white text-black py-2 px-4 rounded h-10 w-40 border-black border-2 hover:bg-black hover:text-white">
 					learn more
 				</button>
 			</div>
