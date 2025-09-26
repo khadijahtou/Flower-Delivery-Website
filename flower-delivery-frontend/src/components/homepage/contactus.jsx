@@ -55,14 +55,14 @@ function ContactUs() {
 				</div>
 			</div>
 
-			<div className="border border-black flex flex-col">
+			<div className="border border-secondary flex flex-col">
 				<img src={Kyiv} alt="Kyiv LuxeBouquets" className="w-full" />
-				<div className="grid grid-cols-6 items-center border-t border-black ">
-					<h3 className="font-semibold border-r border-black text-center p-2">
+				<div className="grid grid-cols-6 items-center border-t border-secondary ">
+					<h3 className="font-semibold border-r border-secondary text-center p-2">
 						Follow us
 					</h3>
 					<div className="flex gap-4 text-2xl justify-center col-span-5 p-2">
-						<FaFacebook className="cursor-pointer hover:text-black" />
+						<FaFacebook className="cursor-pointer hover:text-blue-600" />
 						<FaInstagram className="cursor-pointer hover:text-pink-500" />
 						<FaTwitter className="cursor-pointer hover:text-blue-400" />
 						<FaPinterest className="cursor-pointer hover:text-red-600" />

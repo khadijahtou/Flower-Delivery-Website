@@ -19,7 +19,7 @@ function Review() {
 					everyone around. Highly recommend this flower shop!”
 				</p>
 				<p className="text-gray-600 mb-6">– Ronald Richards</p>
-				<button className=" text-black px-6 py-2 r border border-black">
+				<button className=" text-secondary px-6 py-2 r border border-secondary">
 					READ REVIEWS
 				</button>
 			</div>

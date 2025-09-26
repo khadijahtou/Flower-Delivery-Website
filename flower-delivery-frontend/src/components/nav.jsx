@@ -1,57 +1,40 @@
 import React, { useState } from "react";
+import { AiOutlineMenu } from "react-icons/ai";
+import { MdOutlineShoppingBag } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
-	const [open, setOpen] = useState(false);
+	const [open] = useState(false);
 
 	return (
 		<header className="sticky top-0 z-50 bg-white border-b">
-			<nav className="mx-auto max-w-7xl flex items-center justify-between px-4 py-4">
-				<div></div>
-				<ul className="hidden md:flex items-center gap-6 text-sm font-medium">
+			<nav>
+				<div className="flex w-full lg:hidden">
+					<button className="lg:hidden p-5 border-secondary border-r">
+						<AiOutlineMenu className="size-[18px]" />
+					</button>
+					<Link to="#" className="p-5 border-secondary border-l ml-auto">
+						<MdOutlineShoppingBag className="size-[18px]" />
+					</Link>
+				</div>
+				<ul className="w-full hidden lg:flex">
 					<li>
-						<a href="#shop" className="hover:underline">
-							Shop
-						</a>
+						<div className="p-8 border-secondary border-r">Shop</div>
 					</li>
 					<li>
-						<a href="#about" className="hover:underline">
-							About
-						</a>
+						<div className="p-8 border-secondary border-r">Contact</div>
+					</li>
+					<li className="ml-auto">
+						<div className="p-8 border-secondary border-r border-l">
+							Sign In
+						</div>
 					</li>
 					<li>
-						<a href="#services" className="hover:underline">
-							Services
-						</a>
-					</li>
-					<li>
-						<a href="#testimonials" className="hover:underline">
-							Testimonials
-						</a>
-					</li>
-					<li>
-						<a href="#contact" className="hover:underline">
-							Contact
-						</a>
+						<div className="p-8 border-secondary">Cart</div>
 					</li>
 				</ul>
-				<button
-					className="md:hidden p-2"
-					onClick={() => setOpen(!open)}
-					aria-label="Toggle menu"
-				>
-					<svg
-						width="24"
-						height="24"
-						fill="none"
-						stroke="currentColor"
-						strokeWidth="1.5"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-					>
-						<path d="M4 7h16M4 12h16M4 17h16" />
-					</svg>
-				</button>
 			</nav>
+
 			{open && (
 				<div className="md:hidden border-t bg-white">
 					<ul className="flex flex-col gap-3 px-4 py-4 text-sm font-medium">

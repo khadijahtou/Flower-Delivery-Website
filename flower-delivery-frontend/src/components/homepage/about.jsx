@@ -3,7 +3,10 @@ import React from "react";
 function About() {
 	return (
 		<div className="grid grid-cols-1 md:grid-cols-2 border border-black ">
-			<h1 className="  text-4xl font-bold leading-tight md:w-1/2 text-center p-3">
+			<h1
+				className="  text-4xl font-bold leading-tight md:w-1/2 text-center p-[16px] md:p-10"
+				id="about"
+			>
 				About Us
 			</h1>
 			<div className=" border-black md: flex flex-col gap-6 align-center p-3">

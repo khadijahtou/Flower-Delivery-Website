@@ -4,7 +4,7 @@ import ForYou from "../../assets/homepage/foryou.png";
 function Services() {
 	return (
 		<div className="" id="services">
-			<h2 className="font-semibold text-2xl text-center border border-black p-4">
+			<h2 className="font-semibold text-2xl text-center border border-secondary p-4">
 				OUR SERVICES
 			</h2>
 			<div className="grid grid-col-1 md:grid-cols-2">
@@ -18,7 +18,7 @@ function Services() {
 						than one-time purchases.
 					</p>
 					<div className="">
-						<button className="border border-black w-32 h-10 m-1">
+						<button className="border border-secondary w-32 h-10 m-1">
 							SUBSCRIBE NOW
 						</button>
 					</div>

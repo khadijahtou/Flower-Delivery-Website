@@ -9,7 +9,7 @@ import {
 function Footer() {
 	return (
 		<footer className=" mt-10  ">
-			<div className=" h-full grid grid-cols-1  md:grid-cols-4 ">
+			<div className=" h-full grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4  border-black">
 				<div className="border border-black border-r-0 px-4 pt-3 flex flex-col gap-3">
 					<p className="text-sm ">
 						Remember to offer beautiful flowers from Kyiv LuxeBouquets

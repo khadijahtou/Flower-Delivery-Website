@@ -4,6 +4,7 @@ import MainLayout from "./layout/mainlayout";
 import Home from "./Pages/home";
 import AboutUs from "./Pages/aboutUs";
 import Cart from "./Pages/cart";
+import CategoryPage from "./Pages/Category/CategoryPage";
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -14,14 +15,18 @@ const router = createBrowserRouter([
 				element: <Home />,
 			},
 			{
-				path: "/aboutus",
-				element: <AboutUs />,
-			},
-			{
-				path: "/cart",
-				element: <Cart />,
+				path: "/category/:categoryName",
+				element: <CategoryPage />,
 			},
 		],
+	},
+	{
+		path: "/aboutus",
+		element: <AboutUs />,
+	},
+	{
+		path: "/cart",
+		element: <Cart />,
 	},
 ]);
 function App() {
