@@ -36,7 +36,7 @@ export default function Navbar() {
 			</nav>
 
 			{open && (
-				<div className="md:hidden border-t bg-white">
+				<div className="lg:hidden border-t bg-white">
 					<ul className="flex flex-col gap-3 px-4 py-4 text-sm font-medium">
 						<li>
 							<a href="#shop">Shop</a>

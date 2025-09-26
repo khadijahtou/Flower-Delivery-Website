@@ -3,12 +3,12 @@ import React from "react";
 function ChooseUs() {
 	return (
 		<div className="">
-			<div className=" grid grid-cols-1 md:grid-cols-2 border border-black ">
+			<div className=" grid grid-cols-1 md:grid-cols-2 border border-secondary">
 				<h2 className="font-semibold  text-xl text-center p-10 md:w-1/2">
 					Why Choose Us?
 				</h2>
-				<div className="grid grid-cols-1 border border-black md:1/2">
-					<div className="border border-black p-8">
+				<div className="grid grid-cols-1 border border-secondary md:1/2">
+					<div className="border border-secondary p-8">
 						<h3 className="font-semibold">Stylish bouquets by florists</h3>
 						<p>
 							At our floral studio, our professional florists craft the most
@@ -20,7 +20,7 @@ function ChooseUs() {
 						</p>
 					</div>
 
-					<div className="border border-black p-8">
+					<div className="border border-secondary p-8">
 						<h3 className="font-semibold">On-time delivery</h3>
 						<p>
 							Never miss a moment with our on-time flower delivery service. Our
@@ -29,7 +29,7 @@ function ChooseUs() {
 							thoughtful gift reliably.
 						</p>
 					</div>
-					<div className="border border-black p-8">
+					<div className="border border-secondary p-8">
 						<h3 className="font-semibold">Safe payment</h3>
 						<p>
 							You can feel secure when placing an order with us, as we use
@@ -38,7 +38,7 @@ function ChooseUs() {
 							can shop with confidence.
 						</p>
 					</div>
-					<div className="border border-black p-8">
+					<div className="border border-secondary p-8">
 						<h3 className="font-semibold">Subscription by your needs</h3>
 						<p>
 							With our subscription service tailored to your specific needs, you
