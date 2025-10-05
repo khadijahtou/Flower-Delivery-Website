@@ -1,6 +1,6 @@
 import React from "react";
 import HeroSection from "./herosection";
-import CategoryCard from "../../components/CategoryCard";
+import CategoryCard from "../../components/categoryCard";
 import FreshFlower from "../../assets/homepage/freshFlower.jpg";
 import DriedFlower from "../../assets/homepage/driedFlower.png";
 import LivePlants from "../../assets/homepage/livePlant.png";

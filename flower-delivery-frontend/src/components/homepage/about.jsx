@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function About() {
 	return (
@@ -24,8 +25,8 @@ function About() {
 					plants and gifts the same or next day. Ordering flowers online has
 					never been easier.
 				</p>
-				<button className="bg-white text-black py-2 px-4 rounded h-10 w-40 border-black border-2 hover:bg-black hover:text-white">
-					learn more
+				<button  className="bg-white text-black py-2 px-4 rounded h-10 w-40 border-black border-2 hover:bg-black hover:text-white">
+					<Link to={"/aboutus"} >learn more</Link> 
 				</button>
 			</div>
 		</div>

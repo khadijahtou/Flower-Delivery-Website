@@ -4,6 +4,7 @@ import MainLayout from "./layout/mainlayout";
 import Home from "./Pages/home";
 import AboutUs from "./Pages/aboutUs";
 import Cart from "./Pages/cart";
+import SignIn from "./components/signIn";
 import CategoryPage from "./Pages/Category/CategoryPage";
 import ProductPage from "./components/productpage";
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
 		path: "/cart",
 		element: <Cart />,
 	},
+	{
+		path:"/signin",
+		element:<SignIn />
+	}
 ]);
 function App() {
 	return (
