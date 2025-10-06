@@ -8,45 +8,46 @@ import SignIn from "./components/signIn";
 import CategoryPage from "./Pages/Category/CategoryPage";
 import ProductPage from "./components/productpage";
 const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <MainLayout />,
-		children: [
-			{
-				index: true,
-				element: <Home />,
-			},
-			{
-				path: "/category/:categoryName",
-				element: <CategoryPage />,
-			},
-			{
-				path: "/product/:productId",
-				element: <ProductPage />,
-			},
-		],
-	},
-	{
-		path: "/aboutus",
-		element: <AboutUs />,
-	},
-	{
-		path: "/cart",
-		element: <Cart />,
-	},
-	{
-		path:"/signin",
-		element:<SignIn />
-	}
+  {
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/category/:categoryName",
+        element: <CategoryPage />,
+      },
+      {
+        path: "/product/:productId",
+        element: <ProductPage />,
+      },
+      {
+        path: "/aboutus",
+        element: <AboutUs />,
+      },
+    ],
+  },
+
+  {
+    path: "/cart",
+    element: <Cart />,
+  },
+  {
+    path: "/signin",
+    element: <SignIn />,
+  },
 ]);
 function App() {
-	return (
-		<RouterProvider router={router} />
+  return (
+    <RouterProvider router={router} />
 
-		// <div className="bg-red-800 h-screen">
-		// 	<h1>Flower Delivery Service</h1>
-		// </div>
-	);
+    // <div className="bg-red-800 h-screen">
+    // 	<h1>Flower Delivery Service</h1>
+    // </div>
+  );
 }
 
 export default App;
