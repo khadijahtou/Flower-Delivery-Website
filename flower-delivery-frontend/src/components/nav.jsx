@@ -7,13 +7,17 @@ import { FiFacebook } from "react-icons/fi";
 import { SlSocialTwitter } from "react-icons/sl";
 import { PiTelegramLogo } from "react-icons/pi";
 import { Link } from "react-router-dom";
-
+import rosyDelight from "../assets/rosyDelight.svg";
+import CartCard from "./cartCard";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState(false);
   function toggleNavBar() {
     setOpen((prev) => !prev);
   }
-
+  function toggleCart() {
+    setActive((prev) => !prev);
+  }
   return (
     <>
       <header className="">
@@ -25,10 +29,12 @@ export default function Navbar() {
             >
               <AiOutlineMenu className="size-[18px]" />
             </button>
-            <Link to="#" className="p-5 border-secondary border-l ml-auto">
+            <button
+              className="p-5 border-secondary border-l ml-auto "
+              onClick={toggleCart}
+            >
               <MdOutlineShoppingBag className="size-[18px]" />
-              {/* <IoMdClose /> */}
-            </Link>
+            </button>
           </div>
           <ul className="w-full hidden lg:flex">
             <li>
@@ -46,9 +52,12 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to={"/cart"} className="p-8 border-secondary">
+              <button
+                className="p-8 border-secondary place-items-center"
+                onClick={toggleCart}
+              >
                 Cart
-              </Link>
+              </button>
             </li>
           </ul>
         </nav>
@@ -108,6 +117,52 @@ export default function Navbar() {
           </div>
         )}
         {open && (
+          <div className="md:inset-0  md:bg-white/30 md:top-0   md:backdrop-blur-sm flex absolute z-10 top-0"></div>
+        )}
+
+        {active && (
+          <div className=" absolute z-20 top-0 right-0 h-full w-full justify-end  bg-white lg:w-1/2 border border-secondary">
+            <div className=" flex flex-row border-b border-secondary md:py-[26px]  md:px-[40px] py-3 px-6">
+              <h3 className="text-[16px]">Shopping cart</h3>
+              <IoMdClose onClick={toggleCart} className="ml-auto " />
+            </div>
+            <div className="border-b border-secondary">
+              <CartCard
+                imgUrl={rosyDelight}
+                title="Rosy Delight"
+                quantity={1}
+                price={100}
+              />
+            </div>
+            <div className="flex flex-row justify-between py-[21px] pl-4 pr-[71px] md:p-[40px] border-b border-secondary">
+              <p className="text-[18px]">Subtotal</p>
+              <p className="text-[21px]">$100</p>
+            </div>
+            <div className="md:p-[40px] py-6 px-4 border-b border-secondary">
+              <textarea
+                placeholder="Gift Message"
+                id=""
+                className="w-full h-[120px] border border-transparent hover:border-gray-400"
+              ></textarea>
+            </div>
+            <div className="px-4 py-6 md:px-[40px] md:py-[45px]">
+              {" "}
+              {}
+              <p className="text-center text-sm">
+                Shipping & taxes calculated at checkout Free standard shipping
+                within Kyiv
+              </p>
+            </div>
+            <div className="mb-0">
+              <Link to="/checkout">
+                <button className="w-full bg-black text-white text-center md:h-[56px] h-[46px]">
+                  Check Out{" "}
+                </button>
+              </Link>
+            </div>
+          </div>
+        )}
+        {active && (
           <div className="md:inset-0  md:bg-white/30 md:top-0   md:backdrop-blur-sm flex absolute z-10 top-0"></div>
         )}
       </header>
