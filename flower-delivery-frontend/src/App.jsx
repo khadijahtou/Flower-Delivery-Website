@@ -8,6 +8,8 @@ import SignIn from "./components/signIn";
 import CategoryPage from "./Pages/Category/CategoryPage";
 import ProductPage from "./components/productpage";
 import Checkout from "./Pages/checkout";
+import CheckoutPage from "./Pages/CheckOut/checkOutpage";
+import OrderSummary from "./Pages/CheckOut/orderSummary";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +35,11 @@ const router = createBrowserRouter([
         path: "/checkout",
         element: <Checkout />,
       },
+
+      {
+        path: "/orderSummary",
+        element: <OrderSummary />,
+      },
     ],
   },
 
@@ -43,6 +50,10 @@ const router = createBrowserRouter([
   {
     path: "/signin",
     element: <SignIn />,
+  },
+  {
+    path: "/category",
+    element: <CategoryPage />,
   },
 ]);
 function App() {

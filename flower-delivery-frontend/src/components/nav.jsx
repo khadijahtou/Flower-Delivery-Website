@@ -20,8 +20,8 @@ export default function Navbar() {
   }
   return (
     <>
-      <header className="">
-        <nav className="relative  bg-white border-b">
+      <header className="sticky top-0">
+        <nav className=" bg-white ">
           <div className="flex w-full lg:hidden">
             <button
               className="lg:hidden p-5 border-secondary border-r"
@@ -53,7 +53,7 @@ export default function Navbar() {
             </li>
             <li>
               <button
-                className="p-8 border-secondary place-items-center"
+                className="p-8 border-secondary  text-center w-full "
                 onClick={toggleCart}
               >
                 Cart
@@ -121,7 +121,10 @@ export default function Navbar() {
         )}
 
         {active && (
-          <div className=" absolute z-20 top-0 right-0 h-full w-full justify-end  bg-white lg:w-1/2 border border-secondary">
+          <div
+            className="relative z-20  top-0 right-0  w-full  justify-end  bg-white
+           lg:w-1/2 border border-secondary"
+          >
             <div className=" flex flex-row border-b border-secondary md:py-[26px]  md:px-[40px] py-3 px-6">
               <h3 className="text-[16px]">Shopping cart</h3>
               <IoMdClose onClick={toggleCart} className="ml-auto " />
@@ -142,18 +145,16 @@ export default function Navbar() {
               <textarea
                 placeholder="Gift Message"
                 id=""
-                className="w-full h-[120px] border border-transparent hover:border-gray-400"
+                className=" w-full h-[120px] border border-transparent hover:border-gray-400"
               ></textarea>
             </div>
             <div className="px-4 py-6 md:px-[40px] md:py-[45px]">
-              {" "}
-              {}
               <p className="text-center text-sm">
                 Shipping & taxes calculated at checkout Free standard shipping
                 within Kyiv
               </p>
             </div>
-            <div className="mb-0">
+            <div className="">
               <Link to="/checkout">
                 <button className="w-full bg-black text-white text-center md:h-[56px] h-[46px]">
                   Check Out{" "}

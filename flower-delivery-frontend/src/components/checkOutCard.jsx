@@ -19,6 +19,10 @@ function CheckOutCard({ productImg, productName, quantity, price }) {
           <h5 className="ml-auto text-center">${price}</h5>
         </div>
       </div>
+      {/* <div className="flex flex-row justify-between">
+        <h5 className="text-[16px]">Subtotal</h5>
+        <span className="text-[16px]">${subtotal}</span>
+      </div> */}
     </div>
   );
 }

@@ -11,7 +11,7 @@ function Footer() {
     <footer className="   ">
       <div className=" h-full grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4  border-black ">
         <div className="border border-black border-r-0 border-b-0 p-4 flex flex-col gap-3 ">
-          <p className="text-[16px4 ">
+          <p className="text-[16px] ">
             Remember to offer beautiful flowers from Kyiv LuxeBouquets
             Valentines Day, Mothers Day, Christmas... Reminds you 7 days before.
             No spam or sharing your address
