@@ -20,7 +20,7 @@ export default function Navbar() {
   }
   return (
     <>
-      <header className="sticky top-0">
+      <header className="sticky z-10 top-0">
         <nav className=" bg-white ">
           <div className="flex w-full lg:hidden">
             <button

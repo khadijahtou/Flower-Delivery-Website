@@ -10,6 +10,8 @@ import ProductPage from "./components/productpage";
 import Checkout from "./Pages/checkout";
 import CheckoutPage from "./Pages/CheckOut/checkOutpage";
 import OrderSummary from "./Pages/CheckOut/orderSummary";
+import Payment from "./Pages/CheckOut/payment";
+import ShippingDetails from "./Pages/CheckOut/shipping";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,8 +39,16 @@ const router = createBrowserRouter([
       },
 
       {
+        path: "/shipping",
+        element: <ShippingDetails />,
+      },
+      {
         path: "/orderSummary",
         element: <OrderSummary />,
+      },
+      {
+        path: "/payment",
+        element: <Payment />,
       },
     ],
   },

@@ -40,7 +40,7 @@ function Checkout() {
         <h3>Total</h3>
         <h5>$100.00</h5>
       </div>
-      <Link to={"/ordersummary"} className="hidden lg:block ">
+      <Link to={"/shipping"} className="hidden lg:block ">
         <button className="bg-black text-white w-full ">
           CONTINUE TO PAYMENT
         </button>
