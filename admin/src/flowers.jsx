@@ -23,13 +23,13 @@ function Flowers() {
   ];
 
   return (
-    <div className="w-full max-w-3xl mx-auto mt-8 px-4 lg:p-4">
+    <div className="w-full  mx-auto mt-8 p-6 lg:p-4">
       {flowers.map((flower) => (
         <div
           key={flower.id}
           className="flex flex-col md:flex-row items-start mb-8 border-b pb-6"
         >
-          <div className="w-48 h-48 border border-gray-400 flex items-center justify-center text-gray-500 font-medium mb-4 md:mb-0 md:mr-6">
+          <div className="w-48 md:h-36 h-44 border border-secondary flex items-center justify-center text-gray-500 font-medium mb-4 md:mb-0 md:mr-6">
             {flower.image}
           </div>
           <div>

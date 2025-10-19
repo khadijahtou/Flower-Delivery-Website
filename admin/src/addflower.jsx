@@ -5,7 +5,7 @@ function Addflower() {
   const [image, setImage] = useState(null);
 
   return (
-    <div className="w-full max-w-3xl mx-auto mt-8 p-2 lg:p-4">
+    <div className="w-full  mx-auto mt-8 p-5 lg:p-4">
       <h2 className="text-xl font-semibold mb-6">Add Flower</h2>
 
       <form className="flex flex-col gap-4">
