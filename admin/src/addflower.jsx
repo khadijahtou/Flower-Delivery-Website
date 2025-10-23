@@ -102,11 +102,11 @@ function Addflower() {
               onChange={(e) => setCategory(e.target.value)}
             >
               <option value="">Select Category</option>
-              <option value="Roses">Dried Flowers</option>
-              <option value="Tulips">Fresh Flowers</option>
-              <option value="Daisies">Live Plants </option>
-              <option value="Orchids">Aroma Candels</option>
-              <option value="Fresheners"> Fresheners</option>
+              <option value="Fresh Flowers">Fresh Flowers</option>
+              <option value="Dried Flowers">Dried Flowers</option>
+              <option value="Live Plants">Live Plants</option>
+              <option value="Aroma Candels">Aroma Candels</option>
+              <option value="Fresheners">Fresheners</option>
             </select>
           </div>
           <div>

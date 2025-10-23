@@ -1,26 +1,22 @@
 import React from "react";
+import { useEffect } from "react";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 function Flowers() {
-  const flowers = [
-    {
-      id: 1,
-      name: "Name #1",
-      category: "Category #1",
-      price: "$100",
-      description:
-        "Some short text that briefly describes the flower. The description can be anything as this is just a placeholder.",
-      image: "Flower Image 1",
-    },
-    {
-      id: 2,
-      name: "Name #2",
-      category: "Category #1",
-      price: "$150",
-      description:
-        "Some short text that briefly describes the flower. The description can be anything as this is just a placeholder.",
-      image: "Flower Image 2",
-    },
-  ];
+  const [flowers, setFlowers] = React.useState([]);
+  useEffect(() => {
+    async function fetchFlowers() {
+      try {
+        const response = await fetch(`${serverUrl}/api/flowers`);
+        const data = await response.json();
+        console.log(data);
+        setFlowers(data);
+      } catch (error) {
+        console.error("Error fetching flowers:", error);
+      }
+    }
+    fetchFlowers();
+  }, []);
 
   return (
     <div className="w-full  mx-auto mt-8 p-6 lg:p-4">
@@ -29,8 +25,12 @@ function Flowers() {
           key={flower.id}
           className="flex flex-col md:flex-row items-start mb-8 border-b pb-6"
         >
-          <div className="w-48 md:h-36 h-44 border border-secondary flex items-center justify-center text-gray-500 font-medium mb-4 md:mb-0 md:mr-6">
-            {flower.image}
+          <div className="w-48 h-48  border border-secondary flex items-center justify-center text-gray-500 font-medium mb-4 md:mb-0 md:mr-6">
+            <img
+              src={flower.imageUrl}
+              alt={flower.name}
+              className="w-full min-w-full max-h-full object-fit"
+            />
           </div>
           <div>
             <p className="font-semibold">
@@ -41,7 +41,7 @@ function Flowers() {
             </p>
             <p className="font-semibold">
               <span className="text-black">Price:</span>{" "}
-              <span className="text-red-600">{flower.price}</span>
+              <span className="text-red-600">${flower.price}</span>
             </p>
             <p className="font-semibold text-black">
               Description:{" "}
