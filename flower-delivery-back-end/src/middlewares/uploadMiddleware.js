@@ -5,21 +5,17 @@ import path from "path";
 
 // file filter to allow only images
 const fileFilter = (req, file, cb) => {
-	if (
-		file.mimetype === "image/jpeg" ||
-		file.mimetype === "image/png" ||
-		file.mimetype === "image/jpg"
-	) {
-		cb(null, true);
-	} else {
-		cb(new Error("Only .png, .jpg, or jpeg images are allowed!"), false);
-	}
+  if (file.mimetype.startsWith("image/")) {
+    cb(null, true);
+  } else {
+    cb(new Error("Only .png, .jpg, or jpeg images are allowed!"), false);
+  }
 };
 
 // initialize multer wwith stronge storage and file filter
 const upload = multer({
-	storage: multer.diskStorage({}),
-	fileFilter: fileFilter,
+  storage: multer.diskStorage({}),
+  fileFilter: fileFilter,
 });
 // export the upload middleware
 export default upload;
