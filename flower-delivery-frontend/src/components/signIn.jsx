@@ -22,6 +22,26 @@ function SignIn() {
               className="border border-gray-200 h-14 px-4 w-full"
               placeholder="+380 xx xxx xx xx"
             />
+            <div>
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                className="border border-gray-200 h-14 px-4 w-full"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                className="border border-gray-200 h-14 px-4 w-full"
+                placeholder="********"
+                required
+              />
+            </div>
             <button className="w-full h-14 bg-black text-white">
               Continue
             </button>

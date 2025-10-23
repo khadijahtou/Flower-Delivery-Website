@@ -11,10 +11,10 @@ export default function SignUp() {
   };
 
   return (
-    <div>
-      <div className="inset-0  bg-white/30 md:top-0   md:backdrop-blur-sm flex absolute z-10 top-0"></div>
-      <div className="min-h-screen relative z-20  bg-gray-100 flex items-center justify-center ">
-        <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+    <div className="lg:flex lg:flex-row lg:w-full lg:min-h-screen  bg-cover lg:bg-center lg:overflow-hidden ">
+      <div className="hidden lg:block inset-0  bg-black/10   lg:backdrop-blur-sm  absolute z-10 top-0"></div>
+      <div className="lg:relative lg:z-20  bg-gray-100 lg:flex lg:items-center lg:justify-center lg:min-h-screen  w-full ">
+        <div className="bg-white p-6 lg:rounded-lg lg:shadow-md w-full lg:max-w-md">
           <h2 className="text-2xl font-semibold mb-4">Sign up</h2>
           <p className="text-sm text-gray-600 mb-6">
             Become a member and enjoy personalized gift recommendations, fast
@@ -30,6 +30,27 @@ export default function SignUp() {
                 className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 required
               />
+              <div className="flex flex-col gap-2 ">
+                <label htmlFor="">Email</label>
+                <input
+                  type="email"
+                  name=""
+                  id=""
+                  placeholder="ENTER YOUR EMAIL"
+                  className="border border-gray-300 p-4 "
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="" className="text-[16px]">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  name=""
+                  id=""
+                  className="border border-gray-300 p-4 w-full "
+                />
+              </div>
             </div>
             <div>
               <label htmlFor="">Enter code from SMS</label>

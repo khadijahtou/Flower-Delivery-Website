@@ -70,7 +70,7 @@ export default function Navbar() {
                 <IoMdClose /> :
               </button>
               <li>
-                <Link to="#signin" className="text-[18px] md:text-[21px]">
+                <Link to="/signIn" className="text-[18px] md:text-[21px]">
                   Sign in
                 </Link>
               </li>
@@ -105,7 +105,7 @@ export default function Navbar() {
                   Privacy policy
                 </p>
               </div>
-              <div className="flex flex-row justify-between  px-4">
+              <div className="flex flex-row items-center justify-between  pt-4">
                 <CiInstagram />
                 <AiOutlinePinterest />
                 <FiFacebook />
@@ -117,12 +117,12 @@ export default function Navbar() {
           </div>
         )}
         {open && (
-          <div className="md:inset-0  md:bg-white/30 md:top-0   md:backdrop-blur-sm flex absolute z-10 top-0"></div>
+          <div className="md:inset-0  md:bg-white/30    md:backdrop-blur-sm flex absolute z-10 top-0"></div>
         )}
 
         {active && (
           <div
-            className="relative z-20  top-0 right-0  w-full  justify-end  bg-white
+            className="relative z-30  top-0 right-0  w-full  min-h-screen justify-end  bg-white
            lg:w-1/2 border border-secondary"
           >
             <div className=" flex flex-row border-b border-secondary md:py-[26px]  md:px-[40px] py-3 px-6">
