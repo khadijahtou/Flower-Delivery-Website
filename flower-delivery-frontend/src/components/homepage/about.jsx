@@ -25,8 +25,8 @@ function About() {
           plants and gifts the same or next day. Ordering flowers online has
           never been easier.
         </p>
-        <button className="bg-white text-black py-2 px-4 rounded h-10 w-40 border-black border-2 hover:bg-black hover:text-white">
-          <Link to={"/aboutus"}>learn more</Link>
+        <button className="bg-white text-black py-2 px-4 rounded-sm h-10 w-40 border-black border  hover:bg-black hover:text-white">
+          LEARN MORE
         </button>
       </div>
     </div>
