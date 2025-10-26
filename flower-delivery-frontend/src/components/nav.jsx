@@ -63,38 +63,44 @@ export default function Navbar() {
         </nav>
 
         {open && (
-          <div className="lg:hidden border-t bg-white absolute top-0 z-20 w-full md:w-1/2 ">
-            <ul className="flex flex-col gap-3 px-4 py-4 text-sm font-medium divide-y divide-secondary">
-              <button onClick={toggleNavBar}>
+          <div className="lg:hidden border border-secondary bg-white absolute top-0 z-20 w-full md:w-1/2 ">
+            <ul className="flex flex-col gap-3  font-medium divide-y divide-secondary">
+              <button
+                onClick={toggleNavBar}
+                className="px-[14px] py-2 md:px-4 md:py-3"
+              >
                 {" "}
-                <IoMdClose /> :
+                <IoMdClose className="text-[28px]" />
               </button>
               <li>
-                <Link to="/signIn" className="text-[18px] md:text-[21px]">
+                <Link to="/signIn" className="text-[18px] md:text-[21px] p-6">
                   Sign in
                 </Link>
               </li>
               <li>
-                <Link to="#shop" className="text-[18px] md:text-[21px]">
+                <Link to="#shop" className="text-[18px] md:text-[21px] p-6">
                   Shop
                 </Link>
               </li>
               <li>
-                <Link to="#services" className="text-[18px] md:text-[21px]">
+                <Link to="#services" className="text-[18px] md:text-[21px] p-6">
                   Services
                 </Link>
               </li>
               <li>
-                <a href="#contact" className="text-[18px] md:text-[21px]">
+                <a href="#contact" className="text-[18px] md:text-[21px] p-6">
                   Contact
                 </a>
               </li>
               <li>
-                <Link to={"/aboutus"} className="text-[18px] md:text-[21px]">
+                <Link
+                  to={"/aboutus"}
+                  className="text-[18px] md:text-[21px] p-6"
+                >
                   About Us
                 </Link>
               </li>
-              <div className="text-secondary flex flex-col gap-4">
+              <div className="text-secondary flex flex-col gap-4 p-6">
                 <p className=" font-medium text-sm md:text-[16px]">
                   Shipping & returns
                 </p>
@@ -122,7 +128,7 @@ export default function Navbar() {
 
         {active && (
           <div
-            className="relative z-30  top-0 right-0  w-full  min-h-screen justify-end  bg-white
+            className="relative z-20  top-0 right-0  w-full  h-auto object-cover justify-end  bg-white
            lg:w-1/2 border border-secondary"
           >
             <div className=" flex flex-row border-b border-secondary md:py-[26px]  md:px-[40px] py-3 px-6">
@@ -164,7 +170,7 @@ export default function Navbar() {
           </div>
         )}
         {active && (
-          <div className="md:inset-0  md:bg-white/30 md:top-0   md:backdrop-blur-sm flex absolute z-10 top-0"></div>
+          <div className="md:inset-0  md:bg-white/30    md:backdrop-blur-sm flex absolute z-10 top-0"></div>
         )}
       </header>
     </>
