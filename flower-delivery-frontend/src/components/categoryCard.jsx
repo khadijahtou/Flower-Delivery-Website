@@ -19,7 +19,7 @@ function CategoryCard({ title, imageUrl, link, position }) {
       <img
         src={imageUrl}
         alt={title}
-        className={`w-full h-[200px] md:h-[360px] object-cover object-center ${
+        className={`w-full h-[200px] md:h-[360px] object-fit object-center ${
           position === "right" ? "order-1" : "order-2"
         }`}
       />
