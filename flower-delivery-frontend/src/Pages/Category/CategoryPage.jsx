@@ -1,37 +1,56 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import FreshFlower from "../../assets/homepage/freshFlower.jpg";
-import DriedFlower from "../../assets/homepage/driedFlower.png";
-import ProductCard from "../../components/ProductCard";
-import LivePlants from "../../assets/homepage/livePlant.png";
-import AromaticCandles from "../../assets/homepage/aromaticCandle.png";
-import Fresheners from "../../assets/homepage/fresheners.png";
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import FreshFlower from '../../assets/homepage/freshFlower.jpg'
+import DriedFlower from '../../assets/homepage/driedFlower.png'
+import ProductCard from '../../components/ProductCard'
+import LivePlants from '../../assets/homepage/livePlant.png'
+import AromaticCandles from '../../assets/homepage/aromaticCandle.png'
+import Fresheners from '../../assets/homepage/fresheners.png'
+import useFlowerStore from '../../store/useFlowerStore'
 
 const categories = {
-	"fresh-flowers": "Fresh Flower",
-	"dried-flowers": "Dried Flower",
-	"live-plants": "Live Plant",
-	"aromatic-candles": "Aromatic Candle",
-	fresheners: "Freshener",
-};
+	'fresh-flowers': 'Fresh Flower',
+	'dried-flowers': 'Dried Flower',
+	'live-plants': 'Live Plant',
+	'aromatic-candles': 'Aromatic Candle',
+	fresheners: 'Freshener',
+}
+
+// Map URL category names to database category names
+const categoryMapping = {
+	'fresh-flowers': 'Fresh Flowers',
+	'dried-flowers': 'Dried Flowers',
+	'live-plants': 'Live Plants',
+	'aromatic-candles': 'Aroma Candels',
+	fresheners: 'Fresheners',
+}
 
 function CategoryPage() {
-	const { categoryName } = useParams();
+	const { categoryName } = useParams()
+	const { flowers, loading, error, getFlowers } = useFlowerStore()
+
 	const CategoryImages = {
-		"fresh-flowers": FreshFlower,
-		"dried-flowers": DriedFlower,
-		"live-plants": LivePlants,
-		"aromatic-candles": AromaticCandles,
+		'fresh-flowers': FreshFlower,
+		'dried-flowers': DriedFlower,
+		'live-plants': LivePlants,
+		'aromatic-candles': AromaticCandles,
 		fresheners: Fresheners,
-	};
+	}
+
+	useEffect(() => {
+		if (categoryName && categoryMapping[categoryName]) {
+			getFlowers(categoryMapping[categoryName])
+		}
+	}, [categoryName, getFlowers])
 
 	if (!categoryName || !categories[categoryName]) {
-		return <div>Category not found</div>;
+		return <div className="p-10 text-center text-xl">Category not found</div>
 	}
+
 	return (
-		<div className="grid lg:grid-cols-2">
+		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 auto-rows-[360px]">
 			<div
-				className={`h-[420px] flex flex-col bg-cover bg-center justify-center items-center`}
+				className={`flex flex-col bg-cover bg-center justify-center items-center md:col-span-2 lg:row-span-2 border-b lg:border-r border-secondary`}
 				style={{
 					backgroundImage: `url(${CategoryImages[categoryName]})`,
 				}}
@@ -40,70 +59,35 @@ function CategoryPage() {
 					{categories[categoryName]}
 				</h1>
 			</div>
-			<div className="grid grid-cols-2">
-				<ProductCard
-					productImage={FreshFlower}
-					productLink="/product/1"
-					productName={"SnowFall"}
-					productPrice={70}
-				/>
-				<ProductCard
-					productImage={DriedFlower}
-					productLink="/product/1"
-					productName={"Dawn's Delight"}
-					productPrice={70}
-				/>
-				<ProductCard
-					productImage={FreshFlower}
-					productLink="/product/1"
-					productName={"Pink Elegance"}
-					productPrice={70}
-				/>
-				<ProductCard
-					productImage={FreshFlower}
-					productLink="/product/1"
-					productName={"Rustic Charm"}
-					productPrice={70}
-				/>
-				<ProductCard
-					productImage={FreshFlower}
-					productLink="/product/1"
-					productName={"Autumn Symphony"}
-					productPrice={70}
-				/>
-				<ProductCard
-					productImage={FreshFlower}
-					productLink="/product/1"
-					productName={"Rosy Delight"}
-					productPrice={70}
-				/>
-				<ProductCard
-					productImage={FreshFlower}
-					productLink="/product/1"
-					productName={"Serenity"}
-					productPrice={89}
-				/>
-				<ProductCard
-					productImage={FreshFlower}
-					productLink="/product/1"
-					productName={"Blue Harmony"}
-					productPrice={55}
-				/>
-				<ProductCard
-					productImage={FreshFlower}
-					productLink="/product/1"
-					productName={"Mystical Majesty"}
-					productPrice={80}
-				/>
-				<ProductCard
-					productImage={FreshFlower}
-					productLink="/product/1"
-					productName={"Blazing Blossoms"}
-					productPrice={70}
-				/>
-			</div>
+			{loading && (
+				<div className="col-span-2 p-10 text-center">Loading flowers...</div>
+			)}
+
+			{error && (
+				<div className="col-span-2 p-10 text-center text-red-500">
+					Error: {error}
+				</div>
+			)}
+
+			{!loading && !error && flowers.length === 0 && (
+				<div className="col-span-2 p-10 text-center">
+					No flowers found in this category.
+				</div>
+			)}
+
+			{!loading &&
+				!error &&
+				flowers.map((flower) => (
+					<ProductCard
+						key={flower._id}
+						productImage={flower.imageUrl}
+						productLink={`/product/${flower._id}`}
+						productName={flower.name}
+						productPrice={flower.price}
+					/>
+				))}
 		</div>
-	);
+	)
 }
 
-export default CategoryPage;
+export default CategoryPage
