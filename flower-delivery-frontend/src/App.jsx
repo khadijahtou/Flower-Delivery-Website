@@ -14,6 +14,7 @@ import Payment from "./Pages/CheckOut/payment";
 import ShippingDetails from "./Pages/CheckOut/shipping";
 import SignUp from "./Pages/signUp";
 import ForgotPassword from "./Pages/Resetpassword";
+import CartCard from "./components/cartCard";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -65,7 +66,7 @@ const router = createBrowserRouter([
 
   // {
   //   path: "/cart",
-  //   element: <Cart />,
+  //   element: <CartCard />,
   // },
   {
     path: "/signin",

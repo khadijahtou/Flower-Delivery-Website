@@ -1,89 +1,56 @@
-g# Flower Delivery Backend API
+Flower Delivery Web App
 
-A secure and scalable REST API for managing flower products and user accounts.
-Built with **Node.js**, **Express**, and **MongoDB**, featuring **JWT authentication**, **data validation**, and **Cloudinary** image hosting.
+A full-stack flower ordering website built with the MERN stack (MongoDB, Express, React, Node.js).
+It includes a user-friendly storefront, a secure admin panel, and Paystack integration for payments.
 
----
+Tech Stack
 
-## Features
+Frontend: React.js, Tailwind CSS, Axios, React Router
+Backend: Node.js, Express.js, MongoDB, JWT, Multer, Paystack
+Hosting: Vercel (Frontend & Admin), Render (Backend), MongoDB Atlas
 
-- Authentication & Authorization – Passport.js with JWT
-- Secure Passwords – bcrypt hashing with salt
-- Validated Inputs – using `validator` to sanitize and validate requests
-- Flower Management – add, list, and delete flower products
-- User Management – view and delete registered users
-- Cloud Image Storage – Cloudinary integration for product images
-- Configurable Environment – `.env` file support for sensitive keys
+✨ Features
+🛍️ User
 
----
+Browse and order flowers online
 
-## Tech Stack
+Secure Sign Up / Sign In (password ≥ 8 chars, unique emails only)
 
-| Layer        | Technology               | Purpose                         |
-| ------------ | ------------------------ | ------------------------------- |
-| Server       | Node.js, Express         | REST API framework              |
-| Database     | MongoDB + Mongoose ODM   | Data storage & modeling         |
-| Auth         | Passport.js, JWT, bcrypt | Authentication & security       |
-| Validation   | validator                | Input validation & sanitization |
-| File Storage | Multer + Cloudinary      | Image upload & cloud storage    |
+Cart access restricted to logged-in users
 
----
+Paystack integration for payments
 
-## API Endpoints
+Redirects:
 
-### User Routes
+Success → Home (cart cleared)
 
-| Method | Endpoint              | Description           |
-| ------ | --------------------- | --------------------- |
-| POST   | `/api/users/register` | Register a new user   |
-| POST   | `/api/users/login`    | Login & get JWT token |
-| GET    | `/api/users`          | Get all users         |
-| DELETE | `/api/users/:id`      | Delete a user         |
+Failed → Cart (items retained)
 
-### Flower Routes
+Admin
 
-| Method | Endpoint           | Description      |
-| ------ | ------------------ | ---------------- |
-| GET    | `/api/flowers`     | Get all flowers  |
-| POST   | `/api/flowers`     | Add a new flower |
-| DELETE | `/api/flowers/:id` | Delete a flower  |
+View, add, and delete flowers
 
----
+Upload images with Multer
 
-## Quick Start
+Confirmation popup on successful actions
 
-### 1. Clone & Install
+Security
 
-```bash
-git clone <repo-url>
-cd Flower-Delivery-Website
-npm install
-```
+JWT Authentication
 
-### 2. Configure Environment Variables
+Password & Email Validation
 
-Create a `.env` file in the root directory:
+Protected Routes for sensitive pages (Cart, Checkout, Admin)
 
-```env
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-PORT=3000
-```
+Key Highlights
 
-### 3. Run the Server
+Fully responsive design (mobile, tablet, desktop)
 
-```bash
-npm run dev
-```
+Built following clean MVC structure
 
-The API will be available at:
+Deployed using Vercel + Render
 
-```
-http://localhost:3000
-```
+Integrated Paystack for real payment processing
 
 ---
 
@@ -102,6 +69,15 @@ This project is licensed under the **MIT License**. You are free to use and adap
 
 ---
 
-## RENDER LINK: https://flower-delivery-website-w20a.onrender.com
+## LIVE LINKS
 
-## LOOM VIDEO LINK: https://www.loom.com/share/a2d83885a12c4a17b70a74240ac84c8e?sid=bdbff708-e6b9-4ae8-8e3d-14154104a3c6
+Component Platform URL
+Frontend (User Website) Vercel https://flower-delivery-website-omega.vercel.app
+
+Admin Panel Vercel https://flower-delivery-admin.vercel.app
+
+Backend API Render https://flower-delivery-website-w20a.onrender.com
+Tech Stack
+SERVER: http://localhost:3000
+
+## LOOM VIDEO LINK: https://www.loom.com/share/c5b2ed462e4744f0be4de996053a9ada
