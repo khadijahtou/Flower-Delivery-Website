@@ -1,19 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function ProductCard({ productImage, productName, productPrice, productLink }) {
 	return (
 		<Link
 			to={productLink}
-			className="aspect-square flex flex-col text-center p-6 border border-secondary"
+			className="flex flex-col text-center p-6 border border-secondary bg-no-repeat bg-cover md:bg-contain lg:bg-cover bg-top hover:shadow-lg transition-shadow"
+			style={{
+				backgroundImage: `url(${productImage})`,
+			}}
 		>
-			<div className="">
-				<img src={productImage} alt={productName} />
+			<div className="bg-white mt-auto bg-opacity-20">
+				<h2 className="">{productName}</h2>
+				<p>${productPrice}</p>
 			</div>
-			<h2 className="mt-auto">{productName}</h2>
-			<p>${productPrice}</p>
 		</Link>
-	);
+	)
 }
 
-export default ProductCard;
+export default ProductCard
